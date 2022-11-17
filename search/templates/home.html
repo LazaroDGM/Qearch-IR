@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<h1>
+    Qearch
+</h1>
+<h2>
+    Dataset {{name_dataset}}
+</h2>
+<div>
+    <form method="get">
+        <input type="text" name="search">
+        <input type="submit" value="Search">
+    </form>
+</div>
+<div>
+    {% if count > 0 %}
+    <p>Se encontraron {{count}} documentos</p>
+    <ul>
+        {% for item in query %}
+        <li>
+            {{item}}
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+<footer>
+    <div>
+        <form method="get" action="/datasets">
+            <input type="submit" value="Datasets">
+        </form>
+    </div>
+</footer>
+</body>
+</html>

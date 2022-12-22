@@ -1,6 +1,8 @@
 # Qearch-IR
 Sistema de Recuperación de Información de Documentos Local
 
+En la carpeta `/Informe` se encuetra un archivo `.pdf` con un informe que describe el proyecto
+
 ## Requisitos
 Le recomendamos crear un entorno virtual para ejecutar el proyecto. Trabajamos con la version `3.9` de `python`. Es necesario instalar los módulos `nltk`, `ir_datasets`, `regex` y el framework `django`. Puede ejecutar los siguientes comandos en consola para instalar estos.
 ```

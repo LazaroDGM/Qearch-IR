@@ -1,0 +1,30 @@
+{% extends 'home.html' %}
+
+{% block SearchResults %}
+    {% if not error %}
+
+        {% for i, result in results %}
+
+            <div class="result">
+                {{result.0}}<br/>{{result.1}}
+                <form class="docIndexForm" action="{% url 'preview' %}">
+                    <input type="hidden" class="docIndexTitle" name="docIndex" value="{{i}}">
+                    <input type="submit" class="docIndexSubmit" value="open">
+                </form>
+            </div>
+
+        
+        {% endfor %}
+    {% else %}
+        <p>consulta invalida</p>
+    {% endif %}
+    
+{% endblock  %}
+
+
+
+
+{% block sugestion %} 
+    Palabras parecidas: |
+    {% for word in sugestion %}{{word}}, {% endfor %}
+{% endblock  %}

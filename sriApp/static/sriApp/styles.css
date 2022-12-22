@@ -1,0 +1,292 @@
+*{
+    background-color: #333;
+}
+body{
+    overflow-x: hidden;
+}
+
+.bar{
+    justify-content: flex-start;
+    top: 0;
+    left: 0;
+    
+}
+.bar .list{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+.bar .list li{
+    width: 80px;
+    height: 80px;
+    margin: 3px;
+}
+.bar .list li a{
+    text-decoration: none;
+    color:#fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+.bar .list li a .text{
+    font-size: 15px;
+    font-family: Arial;
+    font-variant: small-caps;
+    z-index: 1;
+    transition: 0.2s;
+}
+.bar .list li a .icon{
+    background: transparent;
+    font-size: 2em;
+    z-index: 1;
+    transition: 0.2s;
+}
+.bar .list li a .icon svg{
+    transition: 0.2s;
+}
+
+.bar .list li a:hover{
+    background: rgb(72, 72, 72);
+}
+.bar .list li a:hover .text{
+    background: rgb(72, 72, 72);
+}
+.bar .list li a:hover .icon svg{
+    background: rgb(72, 72, 72);
+}
+.bar .list li.selected a{
+    background: rgb(90, 90, 90);
+    transform: translate3d(-4px, -4px, 0);
+    box-shadow: 4px 4px 6px 0 rgb(40, 195, 189);
+    box-shadow: 4px 4px 6px 0 rgb(255, 151, 120);
+    box-shadow: 4px 4px 6px 0 rgb(233, 72, 72);
+
+}
+.bar .list li.selected a .text{
+    background: rgb(90, 90, 90);
+}
+.bar .list li.selected a .icon svg{
+    background: rgb(90, 90, 90);
+}
+#searchBarContainer{
+    position: relative;
+    padding-left: 40px;
+    background-color: rgb(233, 72, 72);
+
+
+    margin-bottom: -30px;
+    margin-right: -10px;
+    
+    width: 100%;
+    z-index: 3;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 1px 1px 10px 2px rgb(10, 10, 10);
+}
+#searchBarContainer form{
+    background-color: transparent;
+}
+#searchBarContainer #searchBarBtn{
+    background-color: rgb(233, 72, 72);
+    
+    border: none;
+}
+#searchBarContainer #sugestionSection{
+    background-color: transparent;
+    margin: 12px;
+    font-weight: 500;
+    font-size: large;
+    color: rgb(255, 255, 255);
+    font-family: Arial;
+
+}
+#searchBar{
+    transition: 0.3s;
+    margin: 10px;
+    width:300px;
+    background-color: white; 
+    border: 0; 
+    padding: 5px;
+    padding-left: 40px;
+    color: #333; 
+    border-radius: 20px;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: 300;
+    outline: none;
+}
+/* #searchBar:focus{
+    padding: 10px;
+    padding-left: 40px;
+} */
+#searchBarContainer .icon{
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    background-color: white;
+    /* background-color: transparent; */
+    padding: 5px;
+    border-radius: 15px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    transition: 0.3s;
+}
+#searchBarContainer .icon.searching
+{
+    left: 63px;
+    top: 20px;
+    padding:0;
+    transform: rotate(360deg);
+}
+#searchBarContainer .icon svg{
+    color: #333;
+    background-color: white;
+    transition: 1s;
+}
+
+#searchBarSimulator{
+    height: 60px;
+    transition: 0.3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#resultsGrid{
+    max-width: 800px;
+    min-width: 300px;
+    margin-right: 50px;
+    z-index: 1;
+    background-color: transparent;
+}
+
+#resultsGrid .result{
+    text-decoration: none;
+    padding: 5px;
+    padding-left: 50px;
+    margin: 4px;
+    margin-bottom: 10px;
+    min-height: 50px;
+    border-left: 1px solid white;
+
+    
+    color: rgb(220, 217, 217);
+    font-family: Arial;
+    font-size: 13px;
+
+    background-color: transparent;
+    
+}
+#resultsGrid .result::content{
+    z-index: 10;
+}
+
+#resultsGrid .result::first-line{
+    font-size: large;
+    color: white;
+}
+#resultsGrid .result:hover{
+    background-color: rgb(72, 72, 72);
+    border-color: rgb(233, 72, 72);
+    border-color: rgb(221, 100, 100);
+    border-color: rgb(221, 100, 100);
+    border-color: rgb(148, 125, 177);
+    border-color: rgb(252, 229, 102);
+    
+    cursor: pointer;
+}
+#resultsGrid .result:hover input.docIndexForm{
+    background-color: rgb(72, 72, 72);
+
+}
+#resultsGrid .result:active{
+    background-color: rgb(90, 90, 90);
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+input.docIndexForm{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+input.docIndexSubmit{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+section#doc_details{
+    color: white;
+    font-family: Arial;
+    font-size: medium;
+    padding: 30px;
+    background-color: rgba(34, 34, 34, 0.637);
+    border-radius: 5px;
+    margin-left: 30px;
+    
+}
+
+
+#carucell{
+    position: fixed;
+    width: fit-content;
+    height: fit-content;
+    top: 190px;
+    left: 60%;
+    opacity: 0.2;
+
+}
+#carucell img{
+    background-color: transparent;
+    filter: blur(4px)
+}
+
+/* @media (max-width: 900px) {
+    .list li{
+        min-width: 100px;
+    }
+
+}
+@media (max-width: 300px) {
+    .list li{
+        min-width: 50px;
+    }
+
+} */
+
+@keyframes loading_animation {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+
+
+

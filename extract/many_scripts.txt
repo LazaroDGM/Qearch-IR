@@ -1,0 +1,18 @@
+python3 extract/script_frec.py 'beir/cqadupstack/gaming' 'sriApp/procesed_data/beir/cqadupstack/gaming/frec.json'
+python3 extract/script_SVD.py 'sriApp/procesed_data/beir/cqadupstack/gaming/' 45301 300
+python3 extract/script_idf.py 'sriApp/procesed_data/beir/cqadupstack/gaming/frec.json' 'sriApp/procesed_data/beir/cqadupstack/gaming/idf.pkl' 45301
+python3 extract/script_terms.py 'sriApp/procesed_data/beir/cqadupstack/gaming/frec.json' 'sriApp/procesed_data/beir/cqadupstack/gaming/terms.pkl'
+
+python3 extract/script_frec.py 'cranfield' 'sriApp/procesed_data/cranfield/frec.json'
+python3 extract/script_SVD.py 'sriApp/procesed_data/cranfield/' 1400 300
+python3 extract/script_idf.py 'sriApp/procesed_data/cranfield/frec.json' 'sriApp/procesed_data/cranfield/idf.pkl' 1400
+python3 extract/script_terms.py 'sriApp/procesed_data/cranfield/frec.json' 'sriApp/procesed_data/cranfield/terms.pkl'
+
+python3 extract/script_frec.py 'beir/cqadupstack/physics' 'sriApp/procesed_data/beir/cqadupstack/physics/frec.json'
+python3 extract/script_SVD.py 'sriApp/procesed_data/beir/cqadupstack/physics/' 38316 300
+python3 extract/script_idf.py 'sriApp/procesed_data/beir/cqadupstack/physics/frec.json' 'sriApp/procesed_data/beir/cqadupstack/physics/idf.pkl' 38316
+python3 extract/script_terms.py 'sriApp/procesed_data/beir/cqadupstack/physics/frec.json' 'sriApp/procesed_data/beir/cqadupstack/physics/terms.pkl'
+
+python3 extract/script_frec.py 'beir/cqadupstack/mathematica' 'sriApp/procesed_data/beir/cqadupstack/mathematica/frec.json'
+python3 extract/script_idf.py 'sriApp/procesed_data/beir/cqadupstack/mathematica/frec.json' 'sriApp/procesed_data/beir/cqadupstack/mathematica/idf.pkl' 16705
+python3 extract/script_terms.py 'sriApp/procesed_data/beir/cqadupstack/mathematica/frec.json' 'sriApp/procesed_data/beir/cqadupstack/mathematica/terms.pkl'

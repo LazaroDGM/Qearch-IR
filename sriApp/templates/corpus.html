@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    
+    
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'sriApp/styles.css'%}">
+    <title>Corpus Selection</title>
+</head>
+<body>
+    <div id="resultsGrid">
+    
+    {% for i, corpus in corpuses %}
+    
+            <div class="result">
+                {{corpus}}
+                <form class="docIndexForm" action="{% url 'changeCorpus' %}">
+                    <input type="hidden" class="docIndexTitle" name="corpusIndex" value="{{i}}">
+                    <input type="submit" class="docIndexSubmit" value="open">
+                </form>
+            </div>
+    
+        
+        {% endfor %}
+    </div>    
+        <script src="{% static 'sriApp/script.js'%}"></script>
+</body>
+</html>

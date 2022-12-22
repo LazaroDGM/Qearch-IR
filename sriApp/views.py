@@ -76,11 +76,11 @@ def Search(request):
     docs_per_page = 12
     starting_i = 0 # docs_per_page * page
     ending_i = starting_i + docs_per_page
-    #try:
-    results = current_model[0].SearchIndex(query)[starting_i:ending_i]
-    #except:
-    #    print('aqui')
-    #    return render(request, 'results.html', {"error": True})
+    try:
+        results = current_model[0].SearchIndex(query)[starting_i:ending_i]
+    except:
+        print('aqui')
+        return render(request, 'results.html', {"error": True})
     _temp_results[0] = results
     sugestion = ""
     if (model_index[0] == 1 or model_index[0] == 2) and len(results) <= 5: 
